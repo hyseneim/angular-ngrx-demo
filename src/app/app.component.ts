@@ -4,9 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as CounterActions from './actions/counter.actions';
 
-interface AppState {
-  counter: number;
-}
+import { AppState } from './store/app-state';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +22,10 @@ export class AppComponent {
 
 	increment() {
 		this.store.dispatch(new CounterActions.Increment());
+	}
+
+	twiceIncrement() {
+		this.store.dispatch(new CounterActions.TwiceIncrement());
 	}
 
 	decrement() {
